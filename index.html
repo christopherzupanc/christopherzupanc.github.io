@@ -1,6 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Projektwebseite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .project {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+        .project img, .project video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .project-description {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
+    <header>
+        <h1>Willkommen auf meiner Projektwebseite</h1>
+        <p>Ich bin [Dein Name], ein erfahrener [Dein Beruf/Fachrichtung]. Hier findest du einige meiner bisherigen Arbeiten.</p>
+    </header>
+
+    <section>
+        <h2>Projekt 1: [Projektname]</h2>
+        <div class="project">
+            <img src="projekt1-bild.jpg" alt="Projekt 1 Bild">
+            <video controls>
+                <source src="projekt1-video.mp4" type="video/mp4">
+                Dein Browser unterstützt das Videoformat nicht.
+            </video>
+            <div class="project-description">
+                <p>Beschreibung des Projekts 1: [Hier kannst du eine kurze Beschreibung deines Projekts einfügen, was du gemacht hast, welche Technologien du verwendet hast, etc.]</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projekt 2: [Projektname]</h2>
+        <div class="project">
+            <img src="projekt2-bild.jpg" alt="Projekt 2 Bild">
+            <video controls>
+                <source src="projekt2-video.mp4" type="video/mp4">
+                Dein Browser unterstützt das Videoformat nicht.
+            </video>
+            <div class="project-description">
+                <p>Beschreibung des Projekts 2: [Hier kannst du eine kurze Beschreibung deines Projekts einfügen, was du gemacht hast, welche Technologien du verwendet hast, etc.]</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projekt 3: [Projektname]</h2>
+        <div class="project">
+            <img src="projekt3-bild.jpg" alt="Projekt 3 Bild">
+            <video controls>
+                <source src="projekt3-video.mp4" type="video/mp4">
+                Dein Browser unterstützt das Videoformat nicht.
+            </video>
+            <div class="project-description">
+                <p>Beschreibung des Projekts 3: [Hier kannst du eine kurze Beschreibung deines Projekts einfügen, was du gemacht hast, welche Technologien du verwendet hast, etc.]</p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
