@@ -16,6 +16,16 @@
             color: #fff;
             padding: 20px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
         }
         section {
             margin: 20px;
@@ -25,17 +35,25 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .project {
-            display: flex;
-            flex-direction: column;
             margin-bottom: 40px;
         }
-        .project img, .project video {
-            max-width: 100%;
+        .project-gallery {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .project-gallery img {
+            max-width: 32%;
             height: auto;
             border-radius: 5px;
         }
+        .project video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
         .project-description {
-            margin-top: 15px;
             font-size: 16px;
             color: #555;
         }
@@ -43,6 +61,7 @@
 </head>
 <body>
     <header>
+        <img src="dein-bild.jpg" alt="Dein Bild">
         <h1>Willkommen auf meiner Projektwebseite</h1>
         <p>Ich bin [Dein Name], ein erfahrener [Dein Beruf/Fachrichtung]. Hier findest du einige meiner bisherigen Arbeiten.</p>
     </header>
@@ -50,7 +69,11 @@
     <section>
         <h2>Projekt 1: [Projektname]</h2>
         <div class="project">
-            <img src="projekt1-bild.jpg" alt="Projekt 1 Bild">
+            <div class="project-gallery">
+                <img src="projekt1-bild1.jpg" alt="Projekt 1 Bild 1">
+                <img src="projekt1-bild2.jpg" alt="Projekt 1 Bild 2">
+                <img src="projekt1-bild3.jpg" alt="Projekt 1 Bild 3">
+            </div>
             <video controls>
                 <source src="projekt1-video.mp4" type="video/mp4">
                 Dein Browser unterstützt das Videoformat nicht.
@@ -64,7 +87,11 @@
     <section>
         <h2>Projekt 2: [Projektname]</h2>
         <div class="project">
-            <img src="projekt2-bild.jpg" alt="Projekt 2 Bild">
+            <div class="project-gallery">
+                <img src="projekt2-bild1.jpg" alt="Projekt 2 Bild 1">
+                <img src="projekt2-bild2.jpg" alt="Projekt 2 Bild 2">
+                <img src="projekt2-bild3.jpg" alt="Projekt 2 Bild 3">
+            </div>
             <video controls>
                 <source src="projekt2-video.mp4" type="video/mp4">
                 Dein Browser unterstützt das Videoformat nicht.
@@ -78,7 +105,11 @@
     <section>
         <h2>Projekt 3: [Projektname]</h2>
         <div class="project">
-            <img src="projekt3-bild.jpg" alt="Projekt 3 Bild">
+            <div class="project-gallery">
+                <img src="projekt3-bild1.jpg" alt="Projekt 3 Bild 1">
+                <img src="projekt3-bild2.jpg" alt="Projekt 3 Bild 2">
+                <img src="projekt3-bild3.jpg" alt="Projekt 3 Bild 3">
+            </div>
             <video controls>
                 <source src="projekt3-video.mp4" type="video/mp4">
                 Dein Browser unterstützt das Videoformat nicht.
