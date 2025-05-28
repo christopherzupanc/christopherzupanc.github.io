@@ -24,7 +24,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="text-white font-bold text-xl tracking-wider">
-            <span className="text-orange-500">TECH</span>WERK
+            <span className="text-orange-500">KIKO</span>ENGINEERING
           </div>
 
           {/* Desktop Navigation */}

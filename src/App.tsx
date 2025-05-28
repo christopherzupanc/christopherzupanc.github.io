@@ -31,17 +31,23 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
-      <main className="relative">
-        {/* Background decoration */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        </div>
-        
-        {renderPage()}
-      </main>
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(249,115,22,0.2),rgba(249,115,22,0))] animate-pulse-slow" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(59,130,246,0.2),rgba(59,130,246,0))] animate-pulse-slow" style={{ animationDelay: '-2s' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(139,92,246,0.2),rgba(139,92,246,0))] animate-pulse-slow" style={{ animationDelay: '-4s' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(16,185,129,0.15),rgba(16,185,129,0))] animate-pulse-slow" style={{ animationDelay: '-1s' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_100%,rgba(236,72,153,0.15),rgba(236,72,153,0))] animate-pulse-slow" style={{ animationDelay: '-3s' }} />
+      </div>
+
+      {/* Content */}
+      <div className="relative">
+        <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
+        <main>
+          {renderPage()}
+        </main>
+      </div>
     </div>
   );
 }

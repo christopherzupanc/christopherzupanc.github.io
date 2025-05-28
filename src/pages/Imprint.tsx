@@ -22,8 +22,8 @@ export function Imprint() {
             <div>
               <h3 className="text-white font-medium mb-2">Angaben gemäß § 5 TMG</h3>
               <p>
-                Thomas Zupanc<br />
-                Technische Entwicklung & Maschinenbau<br />
+                Christopher Zupanc<br />
+                Kiko Engineering<br />
                 Musterstraße 123<br />
                 8010 Graz<br />
                 Österreich
@@ -34,7 +34,7 @@ export function Imprint() {
               <h3 className="text-white font-medium mb-2">Kontakt</h3>
               <p>
                 Telefon: +43 664 123 45 67<br />
-                E-Mail: info@techwerk.at
+                E-Mail: info@kiko-engineering.at
               </p>
             </div>
 

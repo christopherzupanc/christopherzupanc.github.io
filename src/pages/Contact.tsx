@@ -143,9 +143,9 @@ export function Contact() {
                   <Mail className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-white font-medium mb-1">E-Mail</h3>
-                    <a href="mailto:info@techwerk.at" 
+                    <a href="mailto:info@kiko-engineering.at" 
                        className="text-gray-300 hover:text-orange-500 transition-colors">
-                      info@techwerk.at
+                      info@kiko-engineering.at
                     </a>
                   </div>
                 </div>
