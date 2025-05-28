@@ -1,39 +1,47 @@
 import "./index.css";
-import { APITester } from "./APITester";
-import { Card, CardContent } from "@/components/ui/card";
-
-import logo from "./logo.svg";
-import reactLogo from "./react.svg";
+import { useState } from "react";
+import { Navigation } from "./components/Navigation";
+import { Home } from "./pages/Home";
+import { Services } from "./pages/Services";
+import { References } from "./pages/References";
+import { About } from "./pages/About";
+import { Contact } from "./pages/Contact";
+import { Imprint } from "./pages/Imprint";
 
 export function App() {
-  return (
-    <div className="container mx-auto p-8 text-center relative z-10">
-      <div className="flex justify-center items-center gap-8 mb-8">
-        <img
-          src={logo}
-          alt="Bun Logo"
-          className="h-36 p-6 transition-all duration-300 hover:drop-shadow-[0_0_2em_#646cffaa] scale-120"
-        />
-        <img
-          src={reactLogo}
-          alt="React Logo"
-          className="h-36 p-6 transition-all duration-300 hover:drop-shadow-[0_0_2em_#61dafbaa] [animation:spin_20s_linear_infinite]"
-        />
-      </div>
+  const [currentPage, setCurrentPage] = useState("home");
 
-      <Card className="bg-card/50 backdrop-blur-sm border-muted">
-        <CardContent className="pt-6">
-          <h1 className="text-5xl font-bold my-4 leading-tight">Bun + React</h1>
-          <p>
-            Edit{" "}
-            <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
-              src/App.tsx
-            </code>{" "}
-            and save to test HMR
-          </p>
-          <APITester />
-        </CardContent>
-      </Card>
+  const renderPage = () => {
+    switch (currentPage) {
+      case "home":
+        return <Home onNavigate={setCurrentPage} />;
+      case "services":
+        return <Services />;
+      case "references":
+        return <References />;
+      case "about":
+        return <About />;
+      case "contact":
+        return <Contact />;
+      case "imprint":
+        return <Imprint />;
+      default:
+        return <Home onNavigate={setCurrentPage} />;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
+      <main className="relative">
+        {/* Background decoration */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+        </div>
+        
+        {renderPage()}
+      </main>
     </div>
   );
 }
