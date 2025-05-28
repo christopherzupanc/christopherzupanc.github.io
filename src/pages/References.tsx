@@ -10,6 +10,12 @@ export function References() {
       solution: "Modularer Aufbau mit austauschbaren Prüfadaptern und zentraler Steuerung",
       testimonial: "Die Lösung hat unsere Prüfzeiten um 70% reduziert. Exzellente Arbeit!",
       client: "Elektronikfertigung GmbH",
+      images: [
+        "assets/projekt1-bild1.JPG",
+        "assets/projekt1-bild2.JPG",
+        "assets/projekt1-bild3.JPG"
+      ],
+      video: "assets/projekt1-video.mp4"
     },
     {
       title: "Labor-Inkubator Serie",
@@ -19,6 +25,11 @@ export function References() {
       solution: "Innovative Regelungselektronik mit benutzerfreundlicher Bauanleitung",
       testimonial: "Die Inkubatoren sind bei unseren Kunden sehr beliebt. Qualität stimmt!",
       client: "BioTech Supplies",
+      images: [
+        "assets/projekt2-bild1.jpg",
+        "assets/projekt2-bild2.jpg",
+        "assets/projekt2-bild3.jpg"
+      ]
     },
     {
       title: "Sensorik-Prototyp",
@@ -28,6 +39,12 @@ export function References() {
       solution: "Energieoptimierte Hardware mit intelligentem Sleep-Mode",
       testimonial: "Der Prototyp übertraf alle unsere Erwartungen.",
       client: "Umweltforschung Institut",
+      images: [
+        "assets/projekt3-bild1.JPG",
+        "assets/projekt3-bild2.JPG",
+        "assets/projekt3-bild3.JPG"
+      ],
+      video: "assets/projekt3-video.mp4"
     },
   ];
 
@@ -54,16 +71,37 @@ export function References() {
                        hover:bg-gray-800/80 transition-all duration-300 group p-8"
             >
               <div className="flex flex-col md:flex-row gap-8">
-                {/* Project Image Placeholder */}
+                {/* Project Images */}
                 <div className="md:w-1/3">
-                  <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-800 
-                                  rounded-lg overflow-hidden relative group-hover:scale-105 
+                  <div className="aspect-video rounded-lg overflow-hidden relative group-hover:scale-105 
                                   transition-transform duration-300">
-                    <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-gray-600">Projektbild</span>
-                    </div>
+                    {project.images && project.images.length > 0 && (
+                      <div className="relative w-full h-full">
+                        <img
+                          src={project.images[0]}
+                          alt={`${project.title} - Hauptbild`}
+                          className="w-full h-full object-cover"
+                        />
+                        {project.images.length > 1 && (
+                          <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
+                            +{project.images.length - 1} weitere Bilder
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
+                  {project.video && (
+                    <div className="mt-4">
+                      <video
+                        src={project.video}
+                        controls
+                        className="w-full rounded-lg"
+                        poster={project.images[0]}
+                      >
+                        Ihr Browser unterstützt keine Video-Wiedergabe.
+                      </video>
+                    </div>
+                  )}
                 </div>
 
                 {/* Project Details */}

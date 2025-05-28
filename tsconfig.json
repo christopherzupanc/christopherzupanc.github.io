@@ -5,10 +5,12 @@
 
     // Bundler mode
     "moduleResolution": "bundler",
-    "module": "preserve",
+    "module": "esnext",
+    "target": "esnext",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,
+    "downlevelIteration": true,
 
     "baseUrl": ".",
     "paths": {

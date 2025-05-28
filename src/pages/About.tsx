@@ -16,10 +16,13 @@ export function About() {
           {/* Introduction */}
           <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8">
             <div className="space-y-6">
-              <div className="w-32 h-32 bg-gradient-to-br from-orange-500 to-orange-600 
-                            rounded-full mx-auto flex items-center justify-center text-white 
-                            text-4xl font-bold">
-                TZ
+              <div className="w-48 h-48 mx-auto">
+                <img
+                  src="assets/dein-bild.jpg"
+                  alt="Thomas Zupanc"
+                  className="w-full h-full object-cover rounded-full border-4 border-orange-500/30 
+                           shadow-lg shadow-orange-500/20 hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <div className="text-center space-y-4">
                 <h2 className="text-2xl font-bold text-white">Thomas Zupanc</h2>

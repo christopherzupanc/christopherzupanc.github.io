@@ -1,4 +1,4 @@
-import { Cpu, Cog, Package, CheckCircle } from "lucide-react";
+import { Cpu, Cog, Package, CheckCircle, FileAxis3d } from "lucide-react";
 
 export function Services() {
   const services = [
@@ -36,7 +36,7 @@ export function Services() {
       ],
     },
     {
-    icon: <Cog className="w-12 h-12" />,
+    icon: <FileAxis3d className="w-12 h-12" />,
       title: "CAD-Design & 3D-Druck",
       description: "Digitale Konstruktion und additive Fertigung",
       features: [
