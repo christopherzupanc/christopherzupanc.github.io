@@ -20,7 +20,7 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 <img
                   src="assets/dein-bild.webp"
-                  alt="Thomas Zupanc"
+                  alt="Christopher Zupanc"
                   className="w-full h-full object-cover rounded-full border-4 border-orange-500/30 
                            shadow-lg shadow-orange-500/20 hover:scale-105 transition-all duration-300
                            relative z-10"
