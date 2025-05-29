@@ -30,7 +30,7 @@ export function About() {
                               z-20"></div>
               </div>
               <div className="text-center space-y-4">
-                <h2 className="text-2xl font-bold text-white">Thomas Zupanc</h2>
+                <h2 className="text-2xl font-bold text-white">Christopher Zupanc</h2>
                 <p className="text-gray-300 text-lg">
                   Maschinenbauingenieur & Technischer Entwickler
                 </p>
