@@ -50,7 +50,7 @@ export function About() {
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Ausbildung</h3>
                   <p className="text-gray-300">
-                    Studium des Maschinenbaus mit Schwerpunkt Mechatronik. 
+                    HTL Abschluss mit Schwerpunkt Elektronik und technische Informatik. 
                     Fortlaufende Weiterbildung in Elektronik und Softwareentwicklung.
                   </p>
                 </div>
