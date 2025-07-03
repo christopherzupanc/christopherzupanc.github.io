@@ -63,7 +63,7 @@ export function About() {
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Werdegang</h3>
                   <p className="text-gray-300">
-                    Vom Entwicklungsingenieur in der Industrie zum selbstständigen 
+                    Vom Technischen Fachplaner und Mechatronik-Spezialist zum selbstständigen 
                     Unternehmer – immer mit dem Ziel, innovative Technik zugänglich zu machen.
                   </p>
                 </div>

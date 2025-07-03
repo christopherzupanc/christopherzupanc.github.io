@@ -29,9 +29,9 @@ export function Services() {
       title: "Bausätze & Kleinserienfertigung",
       description: "Professionelle Bausätze und Kleinserien mit hoher Qualität",
       features: [
-        "Inkubator-Bausätze für Labor und Forschung",
+        "Bausätze für Labor und Forschung",
         "Elektronik-Kits mit Dokumentation",
-        "Kleinserienfertigung bis 100 Stück",
+        "Kleinserienfertigung bis 10 Stück",
         "Qualitätskontrolle und Verpackung",
       ],
     },
@@ -40,7 +40,7 @@ export function Services() {
       title: "CAD-Design & 3D-Druck",
       description: "Digitale Konstruktion und additive Fertigung",
       features: [
-        "3D-CAD Konstruktion (SolidWorks, Fusion 360)",
+        "3D-CAD Konstruktion",
         "FDM und SLA 3D-Druck",
         "Nachbearbeitung und Oberflächenveredelung",
         "Technische Zeichnungen und Dokumentation",
