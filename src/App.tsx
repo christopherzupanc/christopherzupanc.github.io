@@ -31,18 +31,47 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(249,115,22,0.2),rgba(249,115,22,0))] animate-pulse-slow" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(59,130,246,0.2),rgba(59,130,246,0))] animate-pulse-slow" style={{ animationDelay: '-2s' }} />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(139,92,246,0.2),rgba(139,92,246,0))] animate-pulse-slow" style={{ animationDelay: '-4s' }} />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(16,185,129,0.15),rgba(16,185,129,0))] animate-pulse-slow" style={{ animationDelay: '-1s' }} />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_100%,rgba(236,72,153,0.15),rgba(236,72,153,0))] animate-pulse-slow" style={{ animationDelay: '-3s' }} />
+    <div className="min-h-screen relative overflow-hidden bg-[#12121a]">
+      {/* Modern mesh gradient background */}
+      <div className="fixed inset-0">
+        {/* Base gradient layer */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#12121a] via-[#16161f] to-[#12121a]" />
+
+        {/* Primary orange glow - top right */}
+        <div
+          className="absolute top-0 right-0 w-[900px] h-[700px] animate-pulse-slow"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(249, 115, 22, 0.22) 0%, transparent 65%)',
+            transform: 'translate(15%, -25%)',
+          }}
+        />
+
+        {/* Secondary amber glow - bottom left */}
+        <div
+          className="absolute bottom-0 left-0 w-[700px] h-[600px] animate-pulse-slow"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(245, 158, 11, 0.15) 0%, transparent 65%)',
+            transform: 'translate(-25%, 15%)',
+            animationDelay: '-3s',
+          }}
+        />
+
+        {/* Accent glow - center */}
+        <div
+          className="absolute top-1/2 left-1/2 w-[1200px] h-[700px] animate-pulse-slow"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(249, 115, 22, 0.1) 0%, transparent 55%)',
+            transform: 'translate(-50%, -50%)',
+            animationDelay: '-6s',
+          }}
+        />
+
+        {/* Subtle grid overlay */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-20" />
       </div>
 
       {/* Content */}
-      <div className="relative">
+      <div className="relative z-10">
         <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
         <main>
           {renderPage()}
