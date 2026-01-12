@@ -1,4 +1,4 @@
-import { Shield, Lock } from "lucide-react";
+aimport { Shield, Lock } from "lucide-react";
 
 export function Imprint() {
   return (
@@ -52,7 +52,10 @@ export function Imprint() {
             <div className="space-y-2">
               <h3 className="text-zinc-100 font-medium">Berufsbezeichnung und berufsrechtliche Regelungen</h3>
               <p className="leading-relaxed">
-                Berufsbezeichnung: Ingenieur<br />
+                Berufsbezeichnung: Gewerbewortlaut:
+Mechatroniker für Elektronik, Büro- und EDV-Systemtechnik verbunden mit Mechatroniker für 
+Maschinen- und Fertigungstechnik; Mechatroniker für Elektromaschinenbau und Automatisierung; 
+Mechatroniker für Medizingerätetechnik<br />
                 Zuständige Kammer: Wirtschaftskammer Steiermark<br />
                 Verliehen in: Österreich
               </p>

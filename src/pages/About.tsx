@@ -71,7 +71,7 @@ export function About() {
               <div className="space-y-3">
                 <h2 className="text-2xl font-bold text-zinc-100">Christopher Zupanc</h2>
                 <p className="text-orange-400 font-medium">
-                  Softwareingenieur & Technischer Entwickler
+                  Technischer Entwickler
                 </p>
               </div>
 
