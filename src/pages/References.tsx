@@ -1,12 +1,11 @@
 import { Quote, Play, Image as ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { VideoPlayer } from "../components/VideoPlayer";
 
 export function References() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [selectedImage, setSelectedImage] = useState<number>(0);
   const [showVideo, setShowVideo] = useState<number | null>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   const projects = [
     {
@@ -19,6 +18,7 @@ export function References() {
       client: "Elektronikfertigung GmbH",
       images: [
         "assets/projekt1-bild1.webp",
+        "assets/FrontexIdentifier.webp",
         "assets/projekt1-bild2.webp",
         "assets/projekt1-bild3.webp"
       ],
@@ -36,7 +36,7 @@ export function References() {
         "assets/projekt2-bild1.webp",
         "assets/projekt2-bild2.webp",
         "assets/projekt2-bild3.webp"
-      ]
+      ],
     },
     {
       title: "Sensorik-Prototyp",
@@ -61,18 +61,6 @@ export function References() {
     { value: "100%", label: "Kundenzufriedenheit" },
     { value: "25+", label: "Stammkunden" },
   ];
-
-  useEffect(() => {
-    if (showVideo !== null && videoRef.current) {
-      const video = videoRef.current;
-      const videoUrl = projects[showVideo].video;
-      video.src = videoUrl;
-
-      video.play().catch(error => {
-        console.log("Playback failed:", error);
-      });
-    }
-  }, [showVideo]);
 
   const handleImageClick = (projectIndex: number, imageIndex: number) => {
     setSelectedProject(projectIndex);
@@ -123,11 +111,11 @@ export function References() {
                   <div className="lg:w-2/5 space-y-4">
                     {/* Main Image */}
                     <div
-                      className="aspect-video rounded-xl overflow-hidden relative cursor-pointer
-                               border border-white/[0.06] group/image"
+                      className="rounded-xl overflow-hidden relative cursor-pointer
+                               border border-white/[0.06] group/image bg-zinc-900/50 aspect-[4/3]"
                       onClick={(e) => {
                         e.stopPropagation();
-                        handleImageClick(index, selectedImage);
+                        handleImageClick(index, 0);
                       }}
                     >
                       {project.images && project.images.length > 0 && (
@@ -135,9 +123,9 @@ export function References() {
                           <img
                             src={project.images[0]}
                             alt={`${project.title} - Bild 1`}
-                            className="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500"
+                            className="w-full h-full object-contain rounded-lg"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity rounded-xl" />
                           {project.images.length > 1 && (
                             <div className="absolute bottom-3 right-3 bg-black/60 text-white text-xs px-2.5 py-1.5 rounded-lg
                                           backdrop-blur-sm flex items-center gap-1.5">
@@ -155,8 +143,9 @@ export function References() {
                         {project.images.slice(0, 3).map((image, imgIndex) => (
                           <div
                             key={imgIndex}
-                            className="relative w-20 h-14 flex-shrink-0 cursor-pointer rounded-lg overflow-hidden
-                                     border border-white/[0.06] hover:border-orange-500/30 transition-colors"
+                            className="relative cursor-pointer rounded-lg overflow-hidden
+                                     border border-white/[0.06] hover:border-orange-500/30 transition-colors bg-zinc-900/50
+                                     w-20 h-20"
                             onClick={(e) => {
                               e.stopPropagation();
                               handleImageClick(index, imgIndex);
@@ -165,15 +154,15 @@ export function References() {
                             <img
                               src={image}
                               alt={`${project.title} - Thumbnail ${imgIndex + 1}`}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-contain rounded-md"
                             />
                           </div>
                         ))}
                         {project.video && (
                           <div
-                            className="relative w-20 h-14 flex-shrink-0 cursor-pointer rounded-lg overflow-hidden
+                            className="relative cursor-pointer rounded-lg overflow-hidden
                                      border border-white/[0.06] hover:border-orange-500/30 transition-colors
-                                     bg-black/50 flex items-center justify-center"
+                                     bg-zinc-800/80 flex items-center justify-center w-20 h-20"
                             onClick={(e) => {
                               e.stopPropagation();
                               setShowVideo(index);
@@ -246,11 +235,11 @@ export function References() {
               >
                 <X className="w-6 h-6" />
               </button>
-              <div className="relative w-full">
+              <div className="relative w-full flex items-center justify-center">
                 <img
                   src={projects[selectedProject].images[selectedImage]}
                   alt={`${projects[selectedProject].title} - Bild ${selectedImage + 1}`}
-                  className="w-full h-auto max-h-[80vh] object-contain rounded-xl"
+                  className="max-w-full max-h-[80vh] object-contain rounded-xl"
                 />
                 {projects[selectedProject].images.length > 1 && (
                   <>

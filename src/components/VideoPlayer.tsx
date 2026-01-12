@@ -15,6 +15,7 @@ export function VideoPlayer({ src, poster }: VideoPlayerProps) {
         src={src}
         poster={poster}
         controls
+        preload="metadata"
         className="w-full h-full"
         controlsList="nodownload"
       />

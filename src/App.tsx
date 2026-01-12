@@ -16,7 +16,7 @@ export function App() {
       case "home":
         return <Home onNavigate={setCurrentPage} />;
       case "services":
-        return <Services />;
+        return <Services onNavigate={setCurrentPage} />;
       case "references":
         return <References />;
       case "about":

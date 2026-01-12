@@ -1,4 +1,4 @@
-aimport { Shield, Lock } from "lucide-react";
+import { Shield, Lock, FileText } from "lucide-react";
 
 export function Imprint() {
   return (
@@ -137,6 +137,22 @@ Mechatroniker für Medizingerätetechnik<br />
                 wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* AGBs */}
+        <div className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-8 md:p-10 mt-8">
+          <h2 className="text-2xl font-semibold text-zinc-100 mb-8 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center">
+              <FileText className="w-5 h-5 text-orange-400" />
+            </div>
+            Allgemeine Geschäftsbedingungen (AGB)
+          </h2>
+
+          <div className="space-y-8 text-zinc-400">
+            <p className="leading-relaxed">
+              Die allgemeinen Geschäftsbedingungen werden in Kürze hier veröffentlicht.
+            </p>
           </div>
         </div>
       </div>

@@ -1,10 +1,60 @@
-import { ArrowRight, Cpu, Cog, Wrench, Sparkles } from "lucide-react";
+import { ArrowRight, Cpu, Cog, Wrench, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 interface HomeProps {
   onNavigate: (page: string) => void;
 }
 
 export function Home({ onNavigate }: HomeProps) {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const showcaseProjects = [
+    {
+      title: "Automatisierte Prüfstation",
+      category: "Maschinenbau",
+      image: "assets/projekt1-bild1.webp",
+    },
+    {
+      title: "Labor-Inkubator Serie",
+      category: "Bausatz",
+      image: "assets/projekt2-bild1.webp",
+    },
+    {
+      title: "Sensorik-Prototyp",
+      category: "Prototypenentwicklung",
+      image: "assets/projekt3-bild1.webp",
+    },
+  ];
+
+  // Auto-rotation
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % showcaseProjects.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, showcaseProjects.length]);
+
+  const goToSlide = (index: number) => {
+    setActiveSlide(index);
+    setIsAutoPlaying(false);
+    // Resume auto-play after 10 seconds
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  const goToPrev = () => {
+    setActiveSlide((prev) => (prev === 0 ? showcaseProjects.length - 1 : prev - 1));
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  const goToNext = () => {
+    setActiveSlide((prev) => (prev + 1) % showcaseProjects.length);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
   const highlights = [
     {
       icon: <Cpu className="w-7 h-7" />,
@@ -140,22 +190,84 @@ export function Home({ onNavigate }: HomeProps) {
               </button>
             </div>
 
-            {/* Visual Element */}
+            {/* Project Carousel */}
             <div className="relative">
-              <div className="aspect-square max-w-md mx-auto relative">
+              <div className="max-w-md mx-auto relative">
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-amber-500/10
                               rounded-3xl blur-3xl" />
 
-                {/* Main card */}
-                <div className="relative h-full bg-gradient-to-br from-white/[0.04] to-white/[0.01]
-                              rounded-3xl border border-white/[0.08] p-8 backdrop-blur-sm
-                              flex flex-col items-center justify-center">
-                  <div className="absolute inset-0 bg-grid-pattern opacity-40 rounded-3xl" />
-                  <Cog className="w-24 h-24 text-orange-500/50 animate-spin-slow relative z-10" />
-                  <p className="text-zinc-500 mt-6 text-center relative z-10">
-                    Projekt-Showcase
-                  </p>
+                {/* Main carousel card */}
+                <div className="relative bg-gradient-to-br from-white/[0.04] to-white/[0.01]
+                              rounded-3xl border border-white/[0.08] p-6 backdrop-blur-sm overflow-hidden">
+
+                  {/* Carousel container */}
+                  <div className="relative rounded-xl overflow-hidden mb-4 bg-zinc-900/50">
+                    {/* Slides wrapper */}
+                    <div className="relative overflow-hidden">
+                      <div
+                        className="flex transition-transform duration-500 ease-out"
+                        style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+                      >
+                        {showcaseProjects.map((project, idx) => (
+                          <div
+                            key={idx}
+                            className="min-w-full aspect-[4/3] min-h-[300px]"
+                          >
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              className="w-full h-full object-contain rounded-lg"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Navigation arrows */}
+                    <button
+                      onClick={goToPrev}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full
+                               bg-black/50 text-white hover:bg-black/70 transition-colors backdrop-blur-sm z-10"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={goToNext}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full
+                               bg-black/50 text-white hover:bg-black/70 transition-colors backdrop-blur-sm z-10"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+
+                    {/* Gradient overlay for text */}
+                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+
+                    {/* Project info */}
+                    <div className="absolute bottom-3 left-4 right-4 z-10">
+                      <span className="text-xs text-orange-400 font-medium">
+                        {showcaseProjects[activeSlide].category}
+                      </span>
+                      <h4 className="text-white font-semibold">
+                        {showcaseProjects[activeSlide].title}
+                      </h4>
+                    </div>
+                  </div>
+
+                  {/* Dot indicators */}
+                  <div className="flex justify-center gap-2">
+                    {showcaseProjects.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => goToSlide(idx)}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          idx === activeSlide
+                            ? "w-6 bg-orange-500"
+                            : "w-2 bg-zinc-600 hover:bg-zinc-500"
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

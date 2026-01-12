@@ -1,15 +1,6 @@
 import { GraduationCap, Briefcase, Heart, Target } from "lucide-react";
 
 export function About() {
-  const skills = [
-    { skill: "CAD-Design (SolidWorks, Fusion 360)", level: 95 },
-    { skill: "Elektronikentwicklung", level: 90 },
-    { skill: "Mikrocontroller-Programmierung", level: 85 },
-    { skill: "3D-Druck & Rapid Prototyping", level: 92 },
-    { skill: "Mechanische Fertigung", level: 88 },
-    { skill: "Projektmanagement", level: 87 },
-  ];
-
   const journeyItems = [
     {
       icon: <GraduationCap className="w-6 h-6" />,
@@ -126,31 +117,6 @@ export function About() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-
-          {/* Skills Section */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-zinc-100 text-center">
-              Technische Kompetenzen
-            </h3>
-
-            <div className="grid gap-5">
-              {skills.map((item, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-zinc-300 font-medium">{item.skill}</span>
-                    <span className="text-orange-400 font-semibold">{item.level}%</span>
-                  </div>
-                  <div className="h-2 bg-white/[0.05] rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-orange-500 to-amber-500
-                               rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${item.level}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
