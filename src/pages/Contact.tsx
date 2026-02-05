@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MapPin, Send, CheckCircle, Clock } from "lucide-react";
+import { Mail, MapPin, Send, Clock } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -7,13 +7,16 @@ export function Contact() {
     email: "",
     message: "",
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
+
+    const subject = encodeURIComponent(`Projektanfrage von ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nE-Mail: ${formData.email}\n\nNachricht:\n${formData.message}`
+    );
+
+    window.location.href = `mailto:christopherzupanc@outlook.com?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -134,25 +137,14 @@ export function Contact() {
 
               <button
                 type="submit"
-                disabled={isSubmitted}
                 className="w-full px-6 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white
                          rounded-xl font-semibold shadow-lg shadow-orange-500/25
                          hover:shadow-orange-500/40 hover:from-orange-400 hover:to-orange-500
                          transition-all duration-300 transform hover:scale-[1.01]
-                         disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100
                          flex items-center justify-center gap-3"
               >
-                {isSubmitted ? (
-                  <>
-                    <CheckCircle className="w-5 h-5" />
-                    Nachricht gesendet!
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    Nachricht senden
-                  </>
-                )}
+                <Send className="w-5 h-5" />
+                Nachricht senden
               </button>
             </form>
           </div>

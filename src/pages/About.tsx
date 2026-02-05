@@ -66,9 +66,8 @@ export function About() {
                 </p>
               </div>
 
-              <p className="text-zinc-400 max-w-lg leading-relaxed">
-                Mit Leidenschaft für Technik und Innovation entwickle ich seit über 8 Jahren
-                maßgeschneiderte Lösungen für anspruchsvolle technische Herausforderungen.
+              <p className="text-zinc-400 max-w-2xl leading-relaxed">
+                Meine berufliche Reise begann am Labor für Automatisierungstechnik einer Fachhochschule. Dort habe ich komplexe Regelungs- und Steuerungsaufgaben begleitet, erste Projekte eigenverantwortlich umgesetzt und dabei meine Begeisterung für präzise, durchdachte Technik entdeckt. Mit diesem Wissen wechselte ich ins Ingenieurbüro und vertiefte mich als Elektrotechnik-Fachplaner in die Planung sicherer, wirtschaftlicher Anlagen – von der Erstidee bis zur Inbetriebnahme. Parallel dazu arbeite ich als zertifizierter Mechatroniker, halte also stets beide Beine fest in Theorie und Praxis. So entstehen für meine Kunden Lösungen, die auf dem Papier perfekt funktionieren – und im echten Alltag genauso zuverlässig laufen.
               </p>
             </div>
           </div>
