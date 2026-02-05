@@ -19,18 +19,6 @@ export function Services({ onNavigate }: ServicesProps) {
       accent: "from-orange-500/20 to-orange-600/10",
     },
     {
-      icon: <Cog className="w-8 h-8" />,
-      title: "Maschinenbau & Speziallösungen",
-      description: "Individuelle Maschinen und Geräte nach Ihren Anforderungen",
-      features: [
-        "Kleingeräte für spezielle Anwendungen",
-        "Automatisierungslösungen",
-        "Sondermaschinen für Forschung und Entwicklung",
-        "Umbau und Modifikation bestehender Systeme",
-      ],
-      accent: "from-amber-500/20 to-amber-600/10",
-    },
-    {
       icon: <FileAxis3d className="w-8 h-8" />,
       title: "CAD-Design & 3D-Druck",
       description: "Digitale Konstruktion und additive Fertigung",
@@ -41,6 +29,18 @@ export function Services({ onNavigate }: ServicesProps) {
         "Technische Zeichnungen und Dokumentation",
       ],
       accent: "from-amber-500/20 to-orange-500/10",
+    },
+    {
+      icon: <Cog className="w-8 h-8" />,
+      title: "Maschinenbau & Speziallösungen",
+      description: "Individuelle Maschinen und Geräte nach Ihren Anforderungen",
+      features: [
+        "Kleingeräte für spezielle Anwendungen",
+        "Automatisierungslösungen",
+        "Sondermaschinen für Forschung und Entwicklung",
+        "Umbau und Modifikation bestehender Systeme",
+      ],
+      accent: "from-amber-500/20 to-amber-600/10",
     },
   ];
 
