@@ -23,13 +23,20 @@ export function Imprint() {
 
           <div className="space-y-6 text-zinc-400">
             <div className="space-y-2">
-              <h3 className="text-zinc-100 font-medium">Angaben gemäß § 5 TMG</h3>
+              <h3 className="text-zinc-100 font-medium">Medieninhaber</h3>
               <p className="leading-relaxed">
                 Christopher Zupanc<br />
                 Kiko Engineering<br />
                 Leonhardstraße 135<br />
                 8010 Graz<br />
                 Österreich
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-zinc-100 font-medium">Unternehmensgegenstand</h3>
+              <p className="leading-relaxed">
+                Mechatronik-Dienstleistungen, technische Entwicklung und Prototypenbau
               </p>
             </div>
 
