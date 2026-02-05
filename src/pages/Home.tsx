@@ -1,4 +1,4 @@
-import { ArrowRight, Cpu, Cog, Wrench, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Cpu, Cog, FileAxis3d, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface HomeProps {
@@ -62,14 +62,14 @@ export function Home({ onNavigate }: HomeProps) {
       description: "Von der Idee zum funktionsfähigen Prototyp",
     },
     {
-      icon: <Cog className="w-7 h-7" />,
-      title: "Kleinserienbau",
-      description: "Präzise Fertigung in kleinen Stückzahlen",
+      icon: <FileAxis3d className="w-7 h-7" />,
+      title: "CAD-Design & 3D-Druck",
+      description: "Digitale Konstruktion und additive Fertigung",
     },
     {
-      icon: <Wrench className="w-7 h-7" />,
-      title: "Individuelle Lösungen",
-      description: "Maßgeschneiderte Maschinenlösungen",
+      icon: <Cog className="w-7 h-7" />,
+      title: "Maschinenbau & Speziallösungen",
+      description: "Individuelle Maschinen und Geräte nach Ihren Anforderungen",
     },
   ];
 
@@ -79,12 +79,6 @@ export function Home({ onNavigate }: HomeProps) {
       <section className="min-h-[85vh] flex items-center justify-center px-6 lg:px-8 py-20">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20">
-              <Sparkles className="w-4 h-4 text-orange-400" />
-              <span className="text-sm font-medium text-orange-400">Engineering & Prototyping</span>
-            </div>
-
             {/* Main Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
               <span className="text-zinc-100">Innovative </span>
@@ -95,8 +89,8 @@ export function Home({ onNavigate }: HomeProps) {
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-              Vom Prototyp bis zur Kleinserie – ich entwickle und fertige
-              individuelle technische Lösungen für Ihre Anforderungen.
+              Prototypenentwicklung, CAD-Design, 3D-Druck und Maschinenbau –
+              alles aus einer Hand.
             </p>
 
             {/* CTA Buttons */}
