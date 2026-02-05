@@ -1,4 +1,4 @@
-import { Quote, Play, Image as ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Play, Image as ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { VideoPlayer } from "../components/VideoPlayer";
 
@@ -9,13 +9,9 @@ export function References() {
 
   const projects = [
     {
-      title: "Automatisierte Prüfstation",
-      category: "Maschinenbau",
-      description: "Entwicklung einer vollautomatischen Prüfstation für elektronische Baugruppen mit integrierter Datenerfassung.",
-      challenge: "Integration verschiedener Prüfverfahren in einem kompakten System",
-      solution: "Modularer Aufbau mit austauschbaren Prüfadaptern und zentraler Steuerung",
-      testimonial: "Die Lösung hat unsere Prüfzeiten um 70% reduziert. Exzellente Arbeit!",
-      client: "Elektronikfertigung GmbH",
+      title: "Reisepassscanner",
+      category: "Mechatronik",
+      description: "Im Rahmen eines internationalen Projekts entwickelte ich die gesamte Mechanik eines vollautomatischen Reisepassscanners für FRONTEX, die europäische Grenzschutzagentur. Das Projekt umfasste die eigenverantwortliche Gestaltung und den Bau des gesamten Prototyps, einschließlich des Designs und der Fertigung der Bauteile mittels 3D-Druck und Laserschneidtechniken. Darüber hinaus integrierte ich die Elektronikkomponenten wie Mikrocontroller, Schalter und Motoren und programmierte die Firmware des ehemaligen 3D-Druckers. Ein Highlight für mich war hierbei die Entwicklung der gedruckten Nylon-Plattfedern für das gefederte Dokumentenbett.",
       images: [
         "assets/projekt1-bild1.webp",
         "assets/FrontexIdentifier.webp",
@@ -25,13 +21,9 @@ export function References() {
       video: "assets/projekt1-video.mp4"
     },
     {
-      title: "Labor-Inkubator Serie",
-      category: "Bausatz",
-      description: "Entwicklung und Produktion einer Inkubator-Bausatz-Serie für Forschungslabore.",
-      challenge: "Präzise Temperaturregelung bei einfachem Aufbau",
-      solution: "Innovative Regelungselektronik mit benutzerfreundlicher Bauanleitung",
-      testimonial: "Die Inkubatoren sind bei unseren Kunden sehr beliebt. Qualität stimmt!",
-      client: "BioTech Supplies",
+      title: "HAGE 3DpA2 Umbau und Modernisierung",
+      category: "Mechatronik",
+      description: "In diesem Projekt wurde der Hage3DP-A2 3D-Drucker umfassend modernisiert. Der Umbau umfasste die Umstellung auf ein Bowden-System, das das Gewicht des Druckkopfs reduziert. Ein neues Mainboard, das BTT Octopus V1.1, mit Einzelsteuerung aller Schrittmotoren wurde installiert, wodurch die Bewegungsgenauigkeit und Druckqualität verbessert werden. Zusätzlich wurden Bed Leveling und Z-Stepper-Auto-Align integriert, um eine gleichmäßige Druckbett-Oberfläche zu gewährleisten. Die Funktion Linear Advance wurde eingebaut, um die Druckqualität durch präzisere Extrusionskontrolle zu optimieren und dem Bowden-System entgegenzuwirken. Der Druckkopf wurde durch eine leichtere, eigens konstruierte Variante ersetzt, und ein optimierter Lüftungskanal, der mit CFD-Analyse entwickelt wurde, sorgt für eine verbesserte Kühlung der Druckteile. Diese umfassenden Verbesserungen machen den 3D-Drucker präziser, schneller und zuverlässiger.",
       images: [
         "assets/projekt2-bild1.webp",
         "assets/projekt2-bild2.webp",
@@ -39,13 +31,9 @@ export function References() {
       ],
     },
     {
-      title: "Sensorik-Prototyp",
-      category: "Prototypenentwicklung",
-      description: "Prototyp eines drahtlosen Sensornetzwerks für Umweltmessungen.",
-      challenge: "Lange Batterielaufzeit bei kontinuierlicher Datenübertragung",
-      solution: "Energieoptimierte Hardware mit intelligentem Sleep-Mode",
-      testimonial: "Der Prototyp übertraf alle unsere Erwartungen.",
-      client: "Umweltforschung Institut",
+      title: "Universeller Platinenprüfer",
+      category: "Maschinenbau",
+      description: "In diesem Projekt wurde ein universeller Platinentester entwickelt, der es ermöglicht, unterschiedlich große rechteckige Platinen effizient zu testen. Die Funktionsweise des Platinentesters sieht vor, dass eine Testplatine oben in das Gerät eingespannt wird, während die zu prüfende Platine unten eingelegt wird. Die Testerplatine stellt dabei den Kontakt zur zu prüfenden Platine her, sodass eine präzise und zuverlässige Überprüfung der elektronischen Schaltungen erfolgen kann. Diese Lösung optimiert den Testprozess und reduziert den Zeitaufwand für die Überprüfung von Platinen, indem sie eine effiziente Handhabung und Verarbeitung mehrerer Platinen in einer einzigen Testeinheit ermöglicht.",
       images: [
         "assets/projekt3-bild1.webp",
         "assets/projekt3-bild2.webp",
@@ -188,32 +176,6 @@ export function References() {
                     </div>
 
                     <p className="text-zinc-400 leading-relaxed">{project.description}</p>
-
-                    <div className="grid sm:grid-cols-2 gap-5">
-                      <div className="space-y-2">
-                        <h4 className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
-                          Herausforderung
-                        </h4>
-                        <p className="text-zinc-400 text-sm leading-relaxed">{project.challenge}</p>
-                      </div>
-                      <div className="space-y-2">
-                        <h4 className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
-                          Lösung
-                        </h4>
-                        <p className="text-zinc-400 text-sm leading-relaxed">{project.solution}</p>
-                      </div>
-                    </div>
-
-                    {/* Testimonial */}
-                    <div className="bg-white/[0.02] rounded-xl p-5 border border-white/[0.04]">
-                      <div className="flex items-start gap-4">
-                        <Quote className="w-5 h-5 text-orange-500/60 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="text-zinc-300 italic leading-relaxed">{project.testimonial}</p>
-                          <p className="text-zinc-500 text-sm mt-3">– {project.client}</p>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>

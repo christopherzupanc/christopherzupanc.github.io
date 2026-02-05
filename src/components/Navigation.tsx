@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { getPathFromPage } from "../lib/router";
 
 interface NavigationProps {
   currentPage: string;
@@ -23,20 +24,28 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 py-4">
           {/* Logo */}
-          <button
-            onClick={() => onNavigate("home")}
+          <a
+            href={getPathFromPage("home")}
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate("home");
+            }}
             className="group flex items-center gap-1 text-white font-bold text-xl tracking-wide"
           >
             <span className="text-gradient-orange">KIKO</span>
             <span className="text-zinc-100 group-hover:text-white transition-colors">ENGINEERING</span>
-          </button>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.id}
-                onClick={() => onNavigate(item.id)}
+                href={getPathFromPage(item.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate(item.id);
+                }}
                 className={`
                   relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200
                   ${
@@ -50,7 +59,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 {currentPage === item.id && (
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-orange-500 rounded-full" />
                 )}
-              </button>
+              </a>
             ))}
           </div>
 
@@ -68,9 +77,11 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           <div className="md:hidden absolute top-full left-0 right-0 bg-[#0a0a0f]/95 backdrop-blur-2xl border-b border-white/5">
             <div className="px-4 py-4 space-y-1">
               {navItems.map((item) => (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => {
+                  href={getPathFromPage(item.id)}
+                  onClick={(e) => {
+                    e.preventDefault();
                     onNavigate(item.id);
                     setIsMenuOpen(false);
                   }}
@@ -84,7 +95,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   `}
                 >
                   {item.label}
-                </button>
+                </a>
               ))}
             </div>
           </div>

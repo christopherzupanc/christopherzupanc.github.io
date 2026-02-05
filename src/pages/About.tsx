@@ -5,7 +5,7 @@ export function About() {
     {
       icon: <GraduationCap className="w-6 h-6" />,
       title: "Ausbildung",
-      description: "HTL Abschluss mit Schwerpunkt Elektronik und technische Informatik. Fortlaufende Weiterbildung in Elektronik und Softwareentwicklung.",
+      description: "HTL Abschluss mit Schwerpunkt Elektronik und technische Informatik. Fortlaufende Weiterbildung in Mechatronik und Automatisierungstechnik.",
     },
     {
       icon: <Briefcase className="w-6 h-6" />,

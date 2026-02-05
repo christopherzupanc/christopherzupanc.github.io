@@ -1,5 +1,5 @@
 import "./index.css";
-import { useState } from "react";
+import { useRouter } from "./hooks/useRouter";
 import { Navigation } from "./components/Navigation";
 import { Home } from "./pages/Home";
 import { Services } from "./pages/Services";
@@ -9,14 +9,14 @@ import { Contact } from "./pages/Contact";
 import { Imprint } from "./pages/Imprint";
 
 export function App() {
-  const [currentPage, setCurrentPage] = useState("home");
+  const { currentPage, navigate } = useRouter();
 
   const renderPage = () => {
     switch (currentPage) {
       case "home":
-        return <Home onNavigate={setCurrentPage} />;
+        return <Home onNavigate={navigate} />;
       case "services":
-        return <Services onNavigate={setCurrentPage} />;
+        return <Services onNavigate={navigate} />;
       case "references":
         return <References />;
       case "about":
@@ -26,7 +26,7 @@ export function App() {
       case "imprint":
         return <Imprint />;
       default:
-        return <Home onNavigate={setCurrentPage} />;
+        return <Home onNavigate={navigate} />;
     }
   };
 
@@ -72,7 +72,7 @@ export function App() {
 
       {/* Content */}
       <div className="relative z-10">
-        <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
+        <Navigation currentPage={currentPage} onNavigate={navigate} />
         <main>
           {renderPage()}
         </main>

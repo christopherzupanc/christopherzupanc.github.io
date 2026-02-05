@@ -27,7 +27,7 @@ export function Imprint() {
               <p className="leading-relaxed">
                 Christopher Zupanc<br />
                 Kiko Engineering<br />
-                Musterstraße 123<br />
+                Leonhardstraße 135<br />
                 8010 Graz<br />
                 Österreich
               </p>
@@ -36,16 +36,7 @@ export function Imprint() {
             <div className="space-y-2">
               <h3 className="text-zinc-100 font-medium">Kontakt</h3>
               <p className="leading-relaxed">
-                Telefon: +43 664 123 45 67<br />
-                E-Mail: info@kiko-engineering.at
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <h3 className="text-zinc-100 font-medium">Umsatzsteuer-ID</h3>
-              <p className="leading-relaxed">
-                Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                ATU12345678
+                E-Mail: christopherzupanc@outlook.com
               </p>
             </div>
 
