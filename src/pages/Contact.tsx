@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle, Clock } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle, Clock } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -27,19 +27,13 @@ export function Contact() {
     {
       icon: <Mail className="w-5 h-5" />,
       label: "E-Mail",
-      value: "info@kiko-engineering.at",
-      href: "mailto:info@kiko-engineering.at",
-    },
-    {
-      icon: <Phone className="w-5 h-5" />,
-      label: "Telefon",
-      value: "+43 664 123 45 67",
-      href: "tel:+436641234567",
+      value: "christopherzupanc@outlook.com",
+      href: "mailto:christopherzupanc@outlook.com",
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       label: "Standort",
-      value: "Graz, Steiermark, Österreich",
+      value: "Leonhardstraße 135, 8010 Graz",
       href: null,
     },
   ];
@@ -210,7 +204,6 @@ export function Contact() {
                     </h3>
                     <p className="text-zinc-400 text-sm leading-relaxed">
                       Ich antworte in der Regel innerhalb von 24 Stunden auf Ihre Anfrage.
-                      Bei dringenden Projekten erreichen Sie mich auch telefonisch.
                     </p>
                   </div>
                 </div>
